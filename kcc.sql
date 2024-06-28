@@ -1,4 +1,4 @@
---jsp¿ë
+--jspìš©
 CREATE TABLE board(
     seq NUMBER,
     title VARCHAR2(50),
@@ -21,39 +21,39 @@ INSERT INTO board VALUES(10, 'a10', 'a', 'a', sysdate, 9);
 
 
 --<mission kcc>
---1. °¢ ÇĞ»ıÀÇ ÆòÁ¡À» °Ë»öÇÏ¶ó(ÇĞ¹ø, ÀÌ¸§ , ÇĞÁ¡) : student -> º°Äª »ç¿ë
+--1. ê° í•™ìƒì˜ í‰ì ì„ ê²€ìƒ‰í•˜ë¼(í•™ë²ˆ, ì´ë¦„ , í•™ì ) : student -> ë³„ì¹­ ì‚¬ìš©
 SELECT
-    sno   AS ÇĞ¹ø,
-    sname AS ÀÌ¸§,
-    avr   "ÇĞÁ¡"
+    sno   AS í•™ë²ˆ,
+    sname AS ì´ë¦„,
+    avr   "í•™ì "
 FROM
     student;
---2. °¢ °ú¸ñÀÇ ÇĞÁ¡¼ö¸¦ °Ë»öÇÏ¶ó(°ú¸ñ¹øÈ£, °ú¸ñ¸í, ÇĞÁ¡¼ö) : course -> º°Äª »ç¿ë
+--2. ê° ê³¼ëª©ì˜ í•™ì ìˆ˜ë¥¼ ê²€ìƒ‰í•˜ë¼(ê³¼ëª©ë²ˆí˜¸, ê³¼ëª©ëª…, í•™ì ìˆ˜) : course -> ë³„ì¹­ ì‚¬ìš©
 SELECT
-    cno    AS °ú¸ñ¹øÈ£,
-    cname  AS °ú¸ñ¸í,
-    st_num AS ÇĞÁ¡¼ö
+    cno    AS ê³¼ëª©ë²ˆí˜¸,
+    cname  AS ê³¼ëª©ëª…,
+    st_num AS í•™ì ìˆ˜
 FROM
     course;
---3. °¢ ±³¼öÀÇ Á÷À§¸¦ °Ë»öÇÏ¶ó.(±³¼ö¹øÈ£, ±³¼öÀÌ¸§, Á÷À§): professor -> º°Äª »ç¿ë
+--3. ê° êµìˆ˜ì˜ ì§ìœ„ë¥¼ ê²€ìƒ‰í•˜ë¼.(êµìˆ˜ë²ˆí˜¸, êµìˆ˜ì´ë¦„, ì§ìœ„): professor -> ë³„ì¹­ ì‚¬ìš©
 SELECT
-    pno    AS ±³¼ö¹øÈ£,
-    pname  AS ±³¼öÀÌ¸§,
-    orders AS Á÷À§
+    pno    AS êµìˆ˜ë²ˆí˜¸,
+    pname  AS êµìˆ˜ì´ë¦„,
+    orders AS ì§ìœ„
 FROM
     professor;
---4. ±Ş¿©¸¦ 10% ÀÎ»óÇßÀ» ¶§ °¢ Á÷¿ø¸¶´Ù ¿¬°£ Áö±ŞµÇ´Â ±Ş¿©¸¦ °Ë»öÇÏ¶ó. : emp
+--4. ê¸‰ì—¬ë¥¼ 10% ì¸ìƒí–ˆì„ ë•Œ ê° ì§ì›ë§ˆë‹¤ ì—°ê°„ ì§€ê¸‰ë˜ëŠ” ê¸‰ì—¬ë¥¼ ê²€ìƒ‰í•˜ë¼. : emp
 SELECT
-    eno             AS »ç¹ø,
-    ename           AS ÀÌ¸§,
-    sal + sal * 0.9 AS ¿¬ºÀ
+    eno             AS ì‚¬ë²ˆ,
+    ename           AS ì´ë¦„,
+    sal + sal * 0.9 AS ì—°ë´‰
 FROM
     emp;
---5. ÇöÀç ÇĞ»ıÀÇ ÆòÁ¡Àº 4.0 ¸¸Á¡ÀÌ´Ù. ÀÌ¸¦ 4.5 ¸¸Á¡À¸·Î È¯»êÇØ¼­ °Ë»öÇÏ¶ó.:student
+--5. í˜„ì¬ í•™ìƒì˜ í‰ì ì€ 4.0 ë§Œì ì´ë‹¤. ì´ë¥¼ 4.5 ë§Œì ìœ¼ë¡œ í™˜ì‚°í•´ì„œ ê²€ìƒ‰í•˜ë¼.:student
 SELECT
-    sno             AS ÇĞ¹ø,
-    sname           AS ÀÌ¸§,
-    avr * 4.5 / 4.0 "È¯»êÇĞÁ¡"
+    sno             AS í•™ë²ˆ,
+    sname           AS ì´ë¦„,
+    avr * 4.5 / 4.0 "í™˜ì‚°í•™ì "
 FROM
     student;
 
@@ -71,18 +71,18 @@ FROM
 ORDER BY
     sal DESC;
 
---°¢ ÇĞ°ú¸í·Î ±³¼öÀÇ Á¤º¸¸¦ ºÎÀÓ ÀÏÀÚ ¼øÀ¸·Î °Ë»öÇÏÀÚ.
+--ê° í•™ê³¼ëª…ë¡œ êµìˆ˜ì˜ ì •ë³´ë¥¼ ë¶€ì„ ì¼ì ìˆœìœ¼ë¡œ ê²€ìƒ‰í•˜ì.
 SELECT
-    section  AS ¼Ò¼ÓÇĞ°ú,
-    orders   AS ±³¼ö,
-    hiredate AS ºÎÀÓÀÏ
+    section  AS ì†Œì†í•™ê³¼,
+    orders   AS êµìˆ˜,
+    hiredate AS ë¶€ì„ì¼
 FROM
     professor
 ORDER BY
     section,
     hiredate;
 
---1. 2,3ÇĞ³â ÇĞ»ı Áß¿¡¼­ ÇĞÁ¡ÀÌ 2.0¿¡¼­ 3.0 »çÀÌÀÇ ÇĞ»ıÀ» °Ë»öÇÏ¶ó.
+--1. 2,3í•™ë…„ í•™ìƒ ì¤‘ì—ì„œ í•™ì ì´ 2.0ì—ì„œ 3.0 ì‚¬ì´ì˜ í•™ìƒì„ ê²€ìƒ‰í•˜ë¼.
 SELECT
     sno,
     sname,
@@ -94,7 +94,7 @@ WHERE
     AND syear <= 3
     AND 2.0 <= avr
     AND avr <= 3.0;
---2. È­ÇĞ, ¹°¸®ÇĞ°ú ÇĞ»ıÁß¿¡ 1,2 ÇĞ³â ÇĞ»ıÀ» ¼ºÀû ¼øÀ¸·Î °Ë»öÇÏ¶ó.
+--2. í™”í•™, ë¬¼ë¦¬í•™ê³¼ í•™ìƒì¤‘ì— 1,2 í•™ë…„ í•™ìƒì„ ì„±ì  ìˆœìœ¼ë¡œ ê²€ìƒ‰í•˜ë¼.
 SELECT
     sno,
     sname,
@@ -104,10 +104,10 @@ FROM
 WHERE
         syear >= 1
     AND syear <= 2
-    AND major IN ( 'È­ÇĞ', '¹°¸®' )
+    AND major IN ( 'í™”í•™', 'ë¬¼ë¦¬' )
 ORDER BY
     avr;
---3. È­ÇĞ°ú Á¤±³¼ö¸¦ °Ë»õÇÏ¶ó.
+--3. í™”í•™ê³¼ ì •êµìˆ˜ë¥¼ ê²€ìƒˆí•˜ë¼.
 SELECT
     pno,
     section,
@@ -116,53 +116,53 @@ SELECT
 FROM
     professor
 WHERE
-        orders = 'Á¤±³¼ö'
-    AND section = 'È­ÇĞ';
+        orders = 'ì •êµìˆ˜'
+    AND section = 'í™”í•™';
 
 --select * from hr.employees;
---1. È­ÇĞ°ú ÇĞ»ı Áß¿¡ ¼ºÀÌ '°ü'¾¾ÀÎ ÇĞ»ıÀ» °Ë»öÇÏ¶ó
+--1. í™”í•™ê³¼ í•™ìƒ ì¤‘ì— ì„±ì´ 'ê´€'ì”¨ì¸ í•™ìƒì„ ê²€ìƒ‰í•˜ë¼
 SELECT
     *
 FROM
     student
 WHERE
-    major LIKE 'È­ÇĞ'
-    AND sname LIKE '°ü%';
---2. ºÎÀÓÀÏÀÌ 1995³â ÀÌÀüÀÇ Á¤±³¼ö¸¦ °Ë»öÇÏ¶ó.
+    major LIKE 'í™”í•™'
+    AND sname LIKE 'ê´€%';
+--2. ë¶€ì„ì¼ì´ 1995ë…„ ì´ì „ì˜ ì •êµìˆ˜ë¥¼ ê²€ìƒ‰í•˜ë¼.
 SELECT
     *
 FROM
     professor
 WHERE
         hirdate < '1995/1/1'
-    AND orders = 'Á¤±³¼ö';
---3. ¼º°ú ÀÌ¸§ÀÌ °¢°¢ 1±ÛÀÚÀÎ ±³¼ö¸¦ °Ë»öÇÏ¶ó.(ÀÌ¸§ÀÌ 2±ÛÀÚ)
+    AND orders = 'ì •êµìˆ˜';
+--3. ì„±ê³¼ ì´ë¦„ì´ ê°ê° 1ê¸€ìì¸ êµìˆ˜ë¥¼ ê²€ìƒ‰í•˜ë¼.(ì´ë¦„ì´ 2ê¸€ì)
 SELECT
     *
 FROM
     professor
 WHERE
     pname LIKE '__';
---4. È­ÇĞ°ú ÇĞ»ı Áß¿¡ 4.5 È¯»ê ÇĞÀü¹Ö 3.5 ÀÌ»óÀÎ ÇĞ»ıÀ» °Ë»öÇÏ¶ó.
+--4. í™”í•™ê³¼ í•™ìƒ ì¤‘ì— 4.5 í™˜ì‚° í•™ì „ë° 3.5 ì´ìƒì¸ í•™ìƒì„ ê²€ìƒ‰í•˜ë¼.
 SELECT
-    sno             AS ÇĞ¹ø,
-    sname           AS ÀÌ¸§,
-    sex             AS ¼ºº°,
-    syear           AS ÇĞ³â,
-    major           AS ÇĞ°ú,
-    avr * 4.5 / 4.0 "È¯»êÇĞÁ¡"
+    sno             AS í•™ë²ˆ,
+    sname           AS ì´ë¦„,
+    sex             AS ì„±ë³„,
+    syear           AS í•™ë…„,
+    major           AS í•™ê³¼,
+    avr * 4.5 / 4.0 "í™˜ì‚°í•™ì "
 FROM
     student
 WHERE
         avr * 4.5 / 4.0 >= 3.5
-    AND major = 'È­ÇĞ';
---5. È­ÇĞ°ú ÀÌ¿Ü ÇĞ°ú ÇĞ»ıÀÇ ÆòÁ¡À» °¢ ÇĞ°úº° ±×¸®°í ÇĞ³â º° ¼ø¼­·Î Ãâ·ÂÇÏ¶ó.
+    AND major = 'í™”í•™';
+--5. í™”í•™ê³¼ ì´ì™¸ í•™ê³¼ í•™ìƒì˜ í‰ì ì„ ê° í•™ê³¼ë³„ ê·¸ë¦¬ê³  í•™ë…„ ë³„ ìˆœì„œë¡œ ì¶œë ¥í•˜ë¼.
 SELECT
     *
 FROM
     student
 WHERE
-    major <> 'È­ÇĞ'
+    major <> 'í™”í•™'
 ORDER BY
     major,
     syear;
@@ -171,13 +171,13 @@ ORDER BY
 --UNION
 --SELECT eno,ename,dno FROM emp WHERE dno = 20
 
---ÁıÇÕ¿¬»êÀÚ¸¦ ÀÌ¿ëÇÏ¿© emp Å×ÀÌºíÀÇ ³»¿ë Áß 10¹ø ºÎ¼­¹øÈ£ÀÇ »ç¿øµéÀº Á¦¿ÜÇÑ ³»¿ëÀ» Ãâ·ÂÇÏ¶ó.
+--ì§‘í•©ì—°ì‚°ìë¥¼ ì´ìš©í•˜ì—¬ emp í…Œì´ë¸”ì˜ ë‚´ìš© ì¤‘ 10ë²ˆ ë¶€ì„œë²ˆí˜¸ì˜ ì‚¬ì›ë“¤ì€ ì œì™¸í•œ ë‚´ìš©ì„ ì¶œë ¥í•˜ë¼.
 --SELECT eno,ename,dno FROM emp 
 --MINUS
 --SELECT eno,ename,dno FROM emp WHERE dno = 10 
 
--- 1. emp Å×ÀÌºíÀ» »ç¿ëÇÏ¿© 20¹ø, 30¹ø ºÎ¼­¿¡ ±Ù¹«ÇÏ°í ÀÖ´Â »ç¿ø Áß ±Ş¿©°¡ 2000 ÃÊ°úÀÎ »ç¿øÀ» ´ÙÀ½ µÎ°¡Áö ¹æ½ÄÀÇ select¹®À» »ç¿ëÇÏ¿© »ç¿ø¹øÈ£, ±Ş¿© , ºÎ¼­¹øÈ£¸¦ Ãâ·ÂÇÏ¶ó.
---1) ÁıÇÕ ¿¬»êÀÚ¸¦ »ç¿ëÇÏÁö ¾ÊÀº ¹æ½Ä
+-- 1. emp í…Œì´ë¸”ì„ ì‚¬ìš©í•˜ì—¬ 20ë²ˆ, 30ë²ˆ ë¶€ì„œì— ê·¼ë¬´í•˜ê³  ìˆëŠ” ì‚¬ì› ì¤‘ ê¸‰ì—¬ê°€ 2000 ì´ˆê³¼ì¸ ì‚¬ì›ì„ ë‹¤ìŒ ë‘ê°€ì§€ ë°©ì‹ì˜ selectë¬¸ì„ ì‚¬ìš©í•˜ì—¬ ì‚¬ì›ë²ˆí˜¸, ê¸‰ì—¬ , ë¶€ì„œë²ˆí˜¸ë¥¼ ì¶œë ¥í•˜ë¼.
+--1) ì§‘í•© ì—°ì‚°ìë¥¼ ì‚¬ìš©í•˜ì§€ ì•Šì€ ë°©ì‹
 SELECT
     eno,
     ename,
@@ -187,7 +187,7 @@ FROM
 WHERE
     dno IN ( 20, 30 )
     AND sal > 2000;
---2) ÁıÇÕ ¿¬»êÀÚ¸¦ »ç¿ëÇÑ ¹æ½Ä
+--2) ì§‘í•© ì—°ì‚°ìë¥¼ ì‚¬ìš©í•œ ë°©ì‹
 SELECT
     eno,
     ename,
@@ -206,7 +206,7 @@ FROM
 WHERE
     sal > 2000;
 
---1. È­ÇĞ°ú ÇĞ³âº° Æò±Õ ÇĞÁ¡À» °Ë»öÇÏ¶ó
+--1. í™”í•™ê³¼ í•™ë…„ë³„ í‰ê·  í•™ì ì„ ê²€ìƒ‰í•˜ë¼
 SELECT
     syear,
     major,
@@ -214,26 +214,26 @@ SELECT
 FROM
     student
 WHERE
-    major = 'È­ÇĞ'
+    major = 'í™”í•™'
 GROUP BY
     major,
     syear;
---2.°¢ ÇĞ°úº° ÇĞ»ı¼ö¸¦ °Ë»öÇÏ¶ó.
+--2.ê° í•™ê³¼ë³„ í•™ìƒìˆ˜ë¥¼ ê²€ìƒ‰í•˜ë¼.
 SELECT
-    major        AS ÇĞ°ú,
-    COUNT(major) AS ÇĞ»ı¼ö
+    major        AS í•™ê³¼,
+    COUNT(major) AS í•™ìƒìˆ˜
 FROM
     student
 GROUP BY
     major;
---3. È­ÇĞ°ú »ı¹°ÇĞ°ú ÇĞ»ıÀ» 4.5 È¯»ê ÇĞÁ¡ÀÇ Æò±ÕÀ» °¢°¢ °Ë»öÇÏ¶ó
+--3. í™”í•™ê³¼ ìƒë¬¼í•™ê³¼ í•™ìƒì„ 4.5 í™˜ì‚° í•™ì ì˜ í‰ê· ì„ ê°ê° ê²€ìƒ‰í•˜ë¼
 SELECT
     major,
     AVG(avr * 4.5 / 4.0)
 FROM
     student
 WHERE
-    major IN ( 'È­ÇĞ', '»ı¹°' )
+    major IN ( 'í™”í•™', 'ìƒë¬¼' )
 GROUP BY
     major;
 
@@ -242,7 +242,7 @@ SELECT
 FROM
     student;
 
---1. È­ÇĞ°ú¸¦ Á¦¿ÜÇÑ ÇĞ»ıµéÀÇ °úº° ÆòÁ¡Æò±ÕÀ» °Ë»öÇÏ¶ó.
+--1. í™”í•™ê³¼ë¥¼ ì œì™¸í•œ í•™ìƒë“¤ì˜ ê³¼ë³„ í‰ì í‰ê· ì„ ê²€ìƒ‰í•˜ë¼.
 SELECT
     major,
     round(AVG(avr), 2)
@@ -251,8 +251,8 @@ FROM
 GROUP BY
     major
 HAVING
-    major != 'È­ÇĞ';
---2. È­ÇĞ°ú¸¦ Á¦¿ÜÇÑ °¢ ÇĞ°úº° ÆòÁ¡ Áß¿¡ ÆòÁ¡ÀÌ 2.0ÀÌ»ó ÇĞ°úÁ¤º¸¸¦ °Ë»öÇÏ¶ó.
+    major != 'í™”í•™';
+--2. í™”í•™ê³¼ë¥¼ ì œì™¸í•œ ê° í•™ê³¼ë³„ í‰ì  ì¤‘ì— í‰ì ì´ 2.0ì´ìƒ í•™ê³¼ì •ë³´ë¥¼ ê²€ìƒ‰í•˜ë¼.
 SELECT
     major,
     round(AVG(avr), 2)
@@ -260,9 +260,9 @@ FROM
     student
 GROUP BY
     major
-HAVING major != 'È­ÇĞ'
+HAVING major != 'í™”í•™'
        AND AVG(avr) > 2.0;
---3. ±Ù¹«ÁßÀÎ Á÷¿ø 3¸í ÀÌ»óÀÎ ºÎ¼­¸¦ °Ë»öÇÏ¶ó.(emp)
+--3. ê·¼ë¬´ì¤‘ì¸ ì§ì› 3ëª… ì´ìƒì¸ ë¶€ì„œë¥¼ ê²€ìƒ‰í•˜ë¼.(emp)
 SELECT
     dno,
     COUNT(*)
@@ -273,7 +273,7 @@ GROUP BY
 HAVING
     COUNT(*) >= 3;
 
---2ÀÏÂ÷ ¼ö¾÷
+--2ì¼ì°¨ ìˆ˜ì—…
 
 SELECT
     cname,
@@ -295,8 +295,8 @@ SELECT
 FROM
     dual;
 
---3ÀÏÂ÷ ¼ö¾÷
--- Á¦¾à Á¶°Ç °úÁ¦1
+--3ì¼ì°¨ ìˆ˜ì—…
+-- ì œì•½ ì¡°ê±´ ê³¼ì œ1
 CREATE TABLE member (
     id      VARCHAR2(20),
     name    VARCHAR2(20),
@@ -364,7 +364,7 @@ ALTER TABLE order2 MODIFY
     code
         CONSTRAINT code_nn NOT NULL;
 
--- Á¦¾à Á¶°Ç °úÁ¦2
+-- ì œì•½ ì¡°ê±´ ê³¼ì œ2
 CREATE TABLE dept_const (
     deptno NUMBER(2),
     dname  CHAR(14),
@@ -405,22 +405,22 @@ ALTER TABLE emp_const
     ADD CONSTRAINT emp_const_deptno_fk FOREIGN KEY ( deptno )
         REFERENCES dept_const ( deptno );
         
-insert into emp_const values (1,'¿À¸®', '°í´Ï', '010-1234-1234', '1997-12-31', 1000, 12,12);
+insert into emp_const values (1,'ì˜¤ë¦¬', 'ê³ ë‹ˆ', '010-1234-1234', '1997-12-31', 1000, 12,12);
 
 delete from emp_const WHERE deptno = 12;
 
 select * from emp_const where 1=1;
 
---'¼Û°­' ±³¼ö°¡ °­ÀÇÇÏ´Â °ú¸ñÀ» °Ë»öÇÏ¶ó.
+--'ì†¡ê°•' êµìˆ˜ê°€ ê°•ì˜í•˜ëŠ” ê³¼ëª©ì„ ê²€ìƒ‰í•˜ë¼.
 select p.pno, c.pno, p.pname, c.cname
 from professor p, course c
-where c.pno = p.pno and pname = '¼Û°­';
+where c.pno = p.pno and pname = 'ì†¡ê°•';
 
---ÇĞÁ¡ÀÌ 2ÇĞÁ¡ÀÎ °ú¸ñ°ú ÀÌ¸¦ °­ÀÇÇÏ´Â ±³¼ö¸¦ °Ë»öÇÏ¶ó.
+--í•™ì ì´ 2í•™ì ì¸ ê³¼ëª©ê³¼ ì´ë¥¼ ê°•ì˜í•˜ëŠ” êµìˆ˜ë¥¼ ê²€ìƒ‰í•˜ë¼.
 select c.st_num, c.cname, c.pno, p.pname
 from professor p, course c
 where c.pno=p.pno and st_num = 2;
---È­ÇĞ°ú 1ÇĞ³â ÇĞ»ıÀÇ ±â¸»°í»ç ¼ºÀûÀ» °Ë»öÇÏ¶ó.
+--í™”í•™ê³¼ 1í•™ë…„ í•™ìƒì˜ ê¸°ë§ê³ ì‚¬ ì„±ì ì„ ê²€ìƒ‰í•˜ë¼.
 select  s.sno,s.syear,s.major, c.result
 from student s, score c
 where s.sno =c.sno and syear =1;
@@ -429,17 +429,17 @@ select  s.sno,s.syear,s.major, c.result
 from student s
 join score c
 on s.sno =c.sno and syear =1;
--- È­ÇĞ°ú 1ÇĞ³â ÇĞ»ıÀÌ ¼ö°­ÇÏ´Â °ú¸ñÀ» °Ë»öÇÏ¶ó.(3°³ Å×ÀÌºí Á¶ÀÎ)
+-- í™”í•™ê³¼ 1í•™ë…„ í•™ìƒì´ ìˆ˜ê°•í•˜ëŠ” ê³¼ëª©ì„ ê²€ìƒ‰í•˜ë¼.(3ê°œ í…Œì´ë¸” ì¡°ì¸)
 select  syear, major, cname
 from student s, score t, course c
-where s.sno = t.sno and t.cno = c.cno and syear =1 and major like '%È­ÇĞ%';
+where s.sno = t.sno and t.cno = c.cno and syear =1 and major like '%í™”í•™%';
 
---ÇĞ»ı Áß¿¡ µ¿¸íÀÌÀÎÀ» °Ë»öÇÏ¶ó. => distinct
-select distinct a.sno,  a.sname "µ¿¸íÀÌÀÎ"
+--í•™ìƒ ì¤‘ì— ë™ëª…ì´ì¸ì„ ê²€ìƒ‰í•˜ë¼. => distinct
+select distinct a.sno,  a.sname "ë™ëª…ì´ì¸"
 from student a, student b
 where a.sname = b.sname and a.sno<>b.sno;
 
---µî·ÏµÈ °ú¸ñ¿¡ ´ëÇÑ ¸ğµç ±³¼ö¸¦ °Ë»öÇÏ¶ó. => µî·ÏÇÏÁö ¾ÊÀº ±³¼öµµ Ãâ·Â
+--ë“±ë¡ëœ ê³¼ëª©ì— ëŒ€í•œ ëª¨ë“  êµìˆ˜ë¥¼ ê²€ìƒ‰í•˜ë¼. => ë“±ë¡í•˜ì§€ ì•Šì€ êµìˆ˜ë„ ì¶œë ¥
 select * from professor;
 
 select c.cno, c.cname, p.pname, c.st_num
@@ -457,50 +457,50 @@ on c.pno = p.pno;
 select c.cno, c.cname, p.pname, c.st_num
 from course c full join professor p
 on c.pno = p.pno;
--- ºñµî°¡ Á¶ÀÎ
+-- ë¹„ë“±ê°€ ì¡°ì¸
 select s.sname, c.cname, s1.result, sc.grade
 from student s, score s1, course c, scgrade sc
 where s.sno = s1.sno and s1.cno = c.cno;
 
---4ÀÏÂ÷ ¼ö¾÷
---1.'Á¤ÀÇÂù'°ú ºÎ¼­°¡ ´Ù¸£Áö¸¸ µ¿ÀÏÇÑ ¾÷¹«À» ¼öÇàÇÏ´Â »ç¿ø ¸ñ·ÏÀ»Ãâ·ÂÇÏ¶ó.
+--4ì¼ì°¨ ìˆ˜ì—…
+--1.'ì •ì˜ì°¬'ê³¼ ë¶€ì„œê°€ ë‹¤ë¥´ì§€ë§Œ ë™ì¼í•œ ì—…ë¬´ì„ ìˆ˜í–‰í•˜ëŠ” ì‚¬ì› ëª©ë¡ì„ì¶œë ¥í•˜ë¼.
 select d.dname
 from emp e, dept d
-where e.dno = d.dno and ename = 'Á¤ÀÇÂù';
+where e.dno = d.dno and ename = 'ì •ì˜ì°¬';
 
 select e.eno, e.dno, e.ename
 from emp e,dept d
 where e.dno = d.dno and d.dname != (select d.dname
 from emp e, dept d
-where e.dno = d.dno and ename = 'Á¤ÀÇÂù');
+where e.dno = d.dno and ename = 'ì •ì˜ì°¬');
 
---±³¼ö´Ô
+--êµìˆ˜ë‹˜
 select eno,ename,dno, job
 from emp
-where dno != (select dno from emp where ename = 'Á¤ÀÇÂù')
-and job = (select job from emp where ename = 'Á¤ÀÇÂù');
---2. '°ü¿ì'º¸´Ù ÀÏ¹İÈ­ÇĞ°ú¸ñÀÇ ÇĞÁ¡ÀÌ ³·Àº ÇĞ»ıÀÇ ¸í´ÜÀ» Ãâ·ÂÇÏ¶ó.
+where dno != (select dno from emp where ename = 'ì •ì˜ì°¬')
+and job = (select job from emp where ename = 'ì •ì˜ì°¬');
+--2. 'ê´€ìš°'ë³´ë‹¤ ì¼ë°˜í™”í•™ê³¼ëª©ì˜ í•™ì ì´ ë‚®ì€ í•™ìƒì˜ ëª…ë‹¨ì„ ì¶œë ¥í•˜ë¼.
 select g.grade
 from student s, course c, score s1, scgrade g
-where s.sno = s1.sno and s1.cno = c.cno and c.cname = 'ÀÏ¹İÈ­ÇĞ' and s.sname='°ü¿ì' and result between loscore and hiscore;
+where s.sno = s1.sno and s1.cno = c.cno and c.cname = 'ì¼ë°˜í™”í•™' and s.sname='ê´€ìš°' and result between loscore and hiscore;
 
 select s1.cno, sname,g.grade
 from student s, course c, score s1, scgrade g
-where s.sno = s1.sno and s1.cno = c.cno and c.cname = 'ÀÏ¹İÈ­ÇĞ' and  result between loscore and hiscore and grade >
+where s.sno = s1.sno and s1.cno = c.cno and c.cname = 'ì¼ë°˜í™”í•™' and  result between loscore and hiscore and grade >
 (select g.grade
 from student s, course c, score s1, scgrade g
-where s.sno = s1.sno and s1.cno = c.cno and c.cname = 'ÀÏ¹İÈ­ÇĞ' and s.sname='°ü¿ì' and result between loscore and hiscore);
+where s.sno = s1.sno and s1.cno = c.cno and c.cname = 'ì¼ë°˜í™”í•™' and s.sname='ê´€ìš°' and result between loscore and hiscore);
 
 select dno from emp group by dno
 having avg(sal) = (select max(avg(sal)) from emp group by dno);
 
---ÇĞ»ı ÀÎ¿ø¼ö°¡ °¡Àå ¸¹Àº ÇĞ°ú¸¦ Ãâ·ÂÇÏ¶ó.
+--í•™ìƒ ì¸ì›ìˆ˜ê°€ ê°€ì¥ ë§ì€ í•™ê³¼ë¥¼ ì¶œë ¥í•˜ë¼.
 select max(count(major)) from student group by major;
 
 select major from student group by major
 having count(major) = (select max(count(major)) from student group by major);
 
---ÇĞ»ı Áß ±â¸»°í»ç Æò±Õ¼ºÀûÀÌ °¡Àå ³·Àº ÇĞ»ıÀÇ Á¤º¸¸¦ °Ë»öÇÏ¶ó.
+--í•™ìƒ ì¤‘ ê¸°ë§ê³ ì‚¬ í‰ê· ì„±ì ì´ ê°€ì¥ ë‚®ì€ í•™ìƒì˜ ì •ë³´ë¥¼ ê²€ìƒ‰í•˜ë¼.
 select min(avg(result)) from student s, score s1
 group by sname;
 
@@ -510,23 +510,23 @@ INNER JOIN score s1 ON s.sno = s1.sno
 GROUP BY s.sno, s.sname
 HAVING AVG(s1.result) < (SELECT MIN(AVG(result)) FROM student s, score s1
                           GROUP BY sname);
--- ±³¼ö´Ô
+-- êµìˆ˜ë‹˜
 select s.sno, sname
 from student s, score r
 where s.sno = r.sno
 group by s.sno, sname
 having avg(result) = (select min(avg(result)) from score group by sno);
                           
---È­ÇĞ°ú 1ÇĞ³â ÇĞ»ıÁß¿¡ ÆòÁ¡ÀÌ Æò±ÕÀÌÇÏÀÎ ÇĞ»ıÀ» °Ë»öÇÏ¶ó.
-select avg(avr) from student where syear = 1 and major = 'È­ÇĞ';
+--í™”í•™ê³¼ 1í•™ë…„ í•™ìƒì¤‘ì— í‰ì ì´ í‰ê· ì´í•˜ì¸ í•™ìƒì„ ê²€ìƒ‰í•˜ë¼.
+select avg(avr) from student where syear = 1 and major = 'í™”í•™';
 
 select sname, avr from student
 group by avr, sname
-having avg(avr) < (select avg(avr) from student where syear = 1 and major = 'È­ÇĞ');
+having avg(avr) < (select avg(avr) from student where syear = 1 and major = 'í™”í•™');
 
---±³¼ö´Ô
+--êµìˆ˜ë‹˜
 select * from student
-where major = 'È­ÇĞ' and syear = 1 and avr < (select avg(avr) from student where syear = 1 and major = 'È­ÇĞ');
+where major = 'í™”í•™' and syear = 1 and avr < (select avg(avr) from student where syear = 1 and major = 'í™”í•™');
 
 select eno, ename, sal, dno
 from emp
@@ -554,22 +554,22 @@ where sal < (select max(dno)  from emp where dno = 30);
 
 --
 select mgr, job from emp where 
-ename = '¼ÕÇÏ´Ã';
+ename = 'ì†í•˜ëŠ˜';
 
 select eno, ename, mgr, job
 from emp
 where (mgr, job) in (select mgr, job from emp where 
-ename = '¼ÕÇÏ´Ã');
+ename = 'ì†í•˜ëŠ˜');
 ---
-select avr, major from student where major = 'È­ÇĞ';
+select avr, major from student where major = 'í™”í•™';
 
 select * from student
-where avr in (select avr from student where major = 'È­ÇĞ')and major != 'È­ÇĞ';
+where avr in (select avr from student where major = 'í™”í•™')and major != 'í™”í•™';
 ----
 select * from student
-where (avr,syear) in (select avr, syear from student where major = 'È­ÇĞ') and major != 'È­ÇĞ';
+where (avr,syear) in (select avr, syear from student where major = 'í™”í•™') and major != 'í™”í•™';
 -- 
-SELECT AVG(result) FROM course c, score s WHERE c.cno = s.cno and c.cname = 'ÇÙÈ­ÇĞ';
+SELECT AVG(result) FROM course c, score s WHERE c.cno = s.cno and c.cname = 'í•µí™”í•™';
 
 select c.cno, c.cname, c.pno, p.pname
 from course c
@@ -578,24 +578,24 @@ on c.pno = p.pno
 inner join score s
 on c.cno = s.cno
 group by c.cno, c.cname, c.pno, p.pname
-having avg(s.result) > (SELECT AVG(result) FROM course c, score s WHERE c.cno = s.cno and c.cname = 'ÇÙÈ­ÇĞ');
+having avg(s.result) > (SELECT AVG(result) FROM course c, score s WHERE c.cno = s.cno and c.cname = 'í•µí™”í•™');
 
---±³¼ö
+--êµìˆ˜
 select c.cno, c.cname, p.pname, avg(result)
 from score r, professor p, course c
 where r.cno=c.cno
 and p.pno = c.pno
 group by c.cno, c.cname, p.pname
-having  avg(result) > ( select avg(result) from score where cno = (select cno from course where cname = 'ÇÙÈ­ÇĞ'));
+having  avg(result) > ( select avg(result) from score where cno = (select cno from course where cname = 'í•µí™”í•™'));
 
--- ÆäÀÌÂ¡ Ã³¸®¿¡ ¾²ÀÓ
+-- í˜ì´ì§• ì²˜ë¦¬ì— ì“°ì„
 select * from (
     select rownum as row_num, alias.*
     from (select * from board order by seq desc) alias
     )
-    where row_num between 6 and 10;  --=> ÀÌ°Å ¼ö½Ä¸¸ º¯°æµÊ.
+    where row_num between 6 and 10;  --=> ì´ê±° ìˆ˜ì‹ë§Œ ë³€ê²½ë¨.
 
---¿À¶óÅ¬ ÀÎµ¦½º »ı¼º    
+--ì˜¤ë¼í´ ì¸ë±ìŠ¤ ìƒì„±    
 CREATE SEQUENCE board_seq;
 INSERT INTO board values(board_seq.NEXTVAL,'a1', 'a', 'a', sysdate, 0);
 
@@ -606,8 +606,8 @@ select * from board where seq = 9999;
 
 ALTER TABLE board ADD CONSTRAINT board_seq_pk PRIMARY KEY(seq);
 
---ex) board Å×ÀÌºí 'title' ÄÃ·³¿¡ ´ëÇÑ ±Û¹øÈ£(seq) 100000¹ø¿¡ ´ëÇØ¼­ 'title' °ªÀ» 'a100000' ¼öÁ¤ÇÏ°í 'a100000' °Ë»ö ÈÄ ½ÇÇà °èÈ¹À» È®ÀÎ => full scan
---      ÀÎµ¦½º »ı¼ºÇÏ°í ´Ù½Ã °Ë»ö ÈÄ => index scan
+--ex) board í…Œì´ë¸” 'title' ì»¬ëŸ¼ì— ëŒ€í•œ ê¸€ë²ˆí˜¸(seq) 100000ë²ˆì— ëŒ€í•´ì„œ 'title' ê°’ì„ 'a100000' ìˆ˜ì •í•˜ê³  'a100000' ê²€ìƒ‰ í›„ ì‹¤í–‰ ê³„íšì„ í™•ì¸ => full scan
+--      ì¸ë±ìŠ¤ ìƒì„±í•˜ê³  ë‹¤ì‹œ ê²€ìƒ‰ í›„ => index scan
 
 select * from board;
 
@@ -617,5 +617,3 @@ select seq from board where seq = 256;
 select seq from board where title = 'a256';
 
 create index board_title_idx on board(title);
-
---5ÀÏÂ÷
